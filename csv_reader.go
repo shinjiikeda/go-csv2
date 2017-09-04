@@ -334,7 +334,7 @@ func (r *Reader) parseRecord(dst []string) (fields []string, err error) {
 // (r.Comma or '\n').
 func (r *Reader) parseField() (haveField bool, delim rune, err error) {
 	r1, err := r.readRune()
-	for err == nil && r.TrimLeadingSpace && r1 != '\n' && unicode.IsSpace(r1) {
+	for err == nil && r.TrimLeadingSpace && r1 != '\n' && unicode.IsSpace(r1) && r1 != r.Comma && r1 != r.Quote {
 		r1, err = r.readRune()
 	}
 

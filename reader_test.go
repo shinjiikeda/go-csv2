@@ -291,6 +291,13 @@ x,,,
 			{"Hello\r\nHi"},
 		},
 	},
+	{
+		Name:             "TrimSpace",
+		Input:            "a\tb\t\tc\n",
+		Comma:            '\t',
+		TrimLeadingSpace: true,
+		Output:           [][]string{{"a", "b", "", "c"}},
+	},
 }
 
 func TestRead(t *testing.T) {
