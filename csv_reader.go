@@ -91,7 +91,7 @@ type Reader struct {
 	// Comma is the field delimiter.
 	// It is set to comma (',') by NewReader.
 	Comma rune
-    Quote rune
+	Quote rune
 	// Comment, if not 0, is the comment character. Lines beginning with the
 	// Comment character without preceding whitespace are ignored.
 	// With leading whitespace the Comment character becomes part of the
@@ -137,7 +137,7 @@ type Reader struct {
 func NewReader(r io.Reader) *Reader {
 	return &Reader{
 		Comma: ',',
-        Quote: '"',
+		Quote: '"',
 		r:     bufio.NewReader(r),
 	}
 }

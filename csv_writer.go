@@ -23,7 +23,7 @@ import (
 // If UseCRLF is true, the Writer ends each record with \r\n instead of \n.
 type Writer struct {
 	Comma   rune // Field delimiter (set to ',' by NewWriter)
-    Quote   rune
+	Quote   rune
 	UseCRLF bool // True to use \r\n as the line terminator
 	w       *bufio.Writer
 }
@@ -32,7 +32,7 @@ type Writer struct {
 func NewWriter(w io.Writer) *Writer {
 	return &Writer{
 		Comma: ',',
-        Quote: '"',
+		Quote: '"',
 		w:     bufio.NewWriter(w),
 	}
 }
